@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ComicRaft - AI Comic Story Creator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header class="hero">
+        <div class="container">
+            <div class="logo">🎨 ComicRaft</div>
+            <h1>AI Comic Story Creator</h1>
+            <p>Create creative comic stories using Gemini AI.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <h2>Create Your Comic</h2>
+
+            <form method="POST">
+                <label for="topic">Comic Topic</label>
+                <input
+                    type="text"
+                    id="topic"
+                    name="topic"
+                    placeholder="Example: A student discovers a robot"
+                    value="{{ form_data.topic }}"
+                    required
+                >
+
+                <label for="genre">Genre</label>
+                <select id="genre" name="genre">
+                    {% for item in ["Adventure", "Comedy", "Science Fiction", "Fantasy", "Mystery", "Friendship"] %}
+                    <option value="{{ item }}" {% if form_data.genre == item %}selected{% endif %}>
+                        {{ item }}
+                    </option>
+                    {% endfor %}
+                </select>
+
+                <label for="characters">Characters</label>
+                <input
+                    type="text"
+                    id="characters"
+                    name="characters"
+                    placeholder="Example: Alex, Robo, Maya"
+                    value="{{ form_data.characters }}"
+                    required
+                >
+
+                <label for="panels">Number of Panels</label>
+                <input
+                    type="number"
+                    id="panels"
+                    name="panels"
+                    min="1"
+                    max="10"
+                    value="{{ form_data.panels }}"
+                >
+
+                <button type="submit">✨ Generate Comic Story</button>
+            </form>
+        </section>
+
+        {% if story %}
+        <section class="card result">
+            <h2>📖 Your Comic Story</h2>
+            <pre>{{ story }}</pre>
+        </section>
+        {% endif %}
+    </main>
+
+    <footer>
+        <p>ComicRaft © 2026 | Naan Mudhalvan Project</p>
+    </footer>
+</body>
+</html>

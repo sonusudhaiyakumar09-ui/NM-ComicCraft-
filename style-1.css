@@ -1,0 +1,102 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f3ff;
+    color: #24213a;
+    min-height: 100vh;
+}
+
+.hero {
+    background: linear-gradient(135deg, #6c4cff, #9d6cff);
+    color: white;
+    padding: 45px 20px;
+    text-align: center;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 17px;
+}
+
+.container {
+    width: min(900px, 92%);
+    margin: auto;
+}
+
+main.container {
+    padding: 35px 0;
+}
+
+.card {
+    background: white;
+    padding: 28px;
+    border-radius: 18px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 25px rgba(50, 40, 100, 0.10);
+}
+
+.card h2 {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin: 15px 0 7px;
+}
+
+input, select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #d5d0e8;
+    border-radius: 9px;
+    font-size: 15px;
+}
+
+button {
+    width: 100%;
+    border: none;
+    margin-top: 22px;
+    padding: 14px;
+    border-radius: 9px;
+    background: #6c4cff;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #5638df;
+}
+
+.result pre {
+    white-space: pre-wrap;
+    line-height: 1.7;
+    font-family: Arial, sans-serif;
+    background: #faf9ff;
+    padding: 20px;
+    border-radius: 12px;
+    overflow-x: auto;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #68627e;
+}
